@@ -1,13 +1,13 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+ defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Template {
+class Template{
 		var $template_data = array();
 		
 		function set($name, $value)
 		{
 			$this->template_data[$name] = $value;
 		}
-	
 		function load($template = '', $view = '' , $view_data = array(), $return = FALSE)
 		{               
 			$this->CI =& get_instance();

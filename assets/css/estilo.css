@@ -1,6 +1,8 @@
-@charset  "UTF-8";
-
-/***************************** RESETS ********************************************/
-
-
-/****************************** CONTEUDO *********************************************/
+header{
+    text-align: center;
+}
+.cadastro_funcionario input,
+.cadastro_funcionario select
+{
+    margin-bottom: 5px;
+}

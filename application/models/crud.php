@@ -1,41 +1,42 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Crud_model extends CI_Model{
+class Crud extends CI_Model{
 
-    public function cadastrar($tabela="", $dados=NULL){
-        if($dados!=NULL) {
+    public function do_insert($tabela="", $dados=NULL){
+        if($dados!=NULL) :
             $this->db->insert($tabela,$dados);
-            $this->session->set_flashdata('cadastrook','Cadastro realizado com sucesso!');
-		}
+            $this->session->set_flashdata('cadastrook','cadastro efeituado com sucesso!');
+        endif;
     }
 
-    public function atualizar($dados=NULL,$condicao=NULL){
-        if($dados!=NULL && $condicao!=NULL) {
+    public function do_update($dados=NULL,$condicao=NULL){
+        if($dados!=NULL && $condicao!=NULL) :
             $this->db->update('teste',$dados,$condicao);
-            $this->session->set_flashdata('edicaook','Dados atualizados com sucesso!');
+            $this->session->set_flashdata('edicaook','Cadastro efeituado com sucesso!');
             //redirect(current_url());//volta pra url anterior
-		}
-    }
-    public function listar_todos(){
+        endif;
+	}
+	
+    public function get_all(){
         return $this->db->get('teste');
     }
 
-    public function listar_por_id($id=NULL, $tabela){
-        if($id!=NULL){
+    public function get_byId($id=NULL){
+        if($id!=NULL):
             $this->db->where('id',$id);
             $this->db->limit(1);
-            return $this->db->get($tabela);
-        }else{
+            return $this->db->get('teste');
+        else: 
             return false;
-		}
+        endif;
     }
 
-    public function excluir($condicao = NULL){
-        if($condicao!=NULL){
+    public function do_excluir($condicao = NULL){
+        if($condicao!=NULL):
             $this->db->delete('teste',$condicao);
             $this->session->set_flashdata('excluidook','Excluido com sucesso!');
             //redirect('crud/listar');//volta pra url anterior
-		}
+        endif;
     }
 }
