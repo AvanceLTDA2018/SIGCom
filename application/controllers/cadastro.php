@@ -9,5 +9,13 @@
 	public function funcionario(){
 		$this->template->load('template','cadastro/funcionario');
 	}
-
+	public function produto(){
+		$this->template->load('template','cadastro/produto');
+	}
+	public function servico(){
+		$this->template->load('template','cadastro/servico');
+	}
+	public function fornecedor(){
+		$this->template->load('template','cadastro/fornecedor');
+	}
  }

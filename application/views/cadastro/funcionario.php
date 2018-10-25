@@ -36,6 +36,9 @@
             <input type="text" name="complemento" /><br />
             Número:
             <input type="text" name="numero" /><br />
+            Cep:
+            <input type="text" name="cep" /><br />
+
 
 
             <button>Cadastrar</button>
